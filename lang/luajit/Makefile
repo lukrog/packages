@@ -72,6 +72,8 @@ endef
 define Package/luajit/install
 	$(INSTALL_DIR) $(1)/usr/lib/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/*.so.* $(1)/usr/lib/
+	$(INSTALL_DIR) $(1)/usr/share/luajit-2.1.0-beta3/jit
+	$(CP) $(PKG_INSTALL_DIR)/usr/share/luajit-2.1.0-beta3/jit/*.lua $(1)/usr/share/luajit-2.1.0-beta3/jit
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(CP) $(PKG_INSTALL_DIR)/usr/bin/luajit-2.1.0-beta3 $(1)/usr/bin/$(PKG_NAME)
 endef
